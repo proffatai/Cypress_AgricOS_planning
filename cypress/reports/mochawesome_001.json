@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-27T16:16:10.378Z",
+    "end": "2022-08-27T16:16:30.228Z",
+    "duration": 19850,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ec31577d-8ab2-41ce-8742-b7447f54643a",
+      "title": "",
+      "fullFile": "cypress/integration/General Settings.js",
+      "file": "cypress/integration/General Settings.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c42d101f-0a7b-4a25-8104-5bb3c7081faa",
+          "title": "Homescreen of planning OS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "General Settings Menu",
+              "fullTitle": "Homescreen of planning OS General Settings Menu",
+              "timedOut": null,
+              "duration": 19838,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://planning.uat.agric-os.com/');\ncy.get('#username').type('lagos.admin');\ncy.get('#password').type('1234');\ncy.get('.MuiButton-root').click();\ncy.contains('General Settings').click(); //Affirming that we are on general settings page\nvar url = 'http://planning.uat.agric-os.com/general-settings';\ncy.url().should('equal', url); //Headings that should be present in the app\nvar headings = [\"Select Country\", \"Default Language\", \"Time Zone\", \"Select Currency\", \"Crop Types\", \"Season\", \"Network Types\", \"Clearance Threshold\"]; //Checking if the first 8 headings are present\nvar i = 1;\nwhile (i < headings.length + 1) {\n  cy.get(':nth-child(' + i + ') > .css-1rgwm5s-MuiTypography-root').should('contain', headings[i - 1]).and('be.visible');\n  i++;\n} //selecting country\n\ncy.get('#companyCountry').click();\ncy.get('.MuiMenuItem-root').should('contain', 'Nigeria'); //selecting language\ncy.get('#companyLanguage').click({\n  force: true\n});\ncy.get('[data-value=\"FRENCH\"]').should('contain', 'FRENCH');\ncy.get('[data-value=\"ENGLISH\"]').should('contain', 'ENGLISH');\ncy.get('[data-value=\"HAUSA\"]').should('contain', 'HAUSA'); //selecting timezone (GNT+2)\ncy.get('#companyTimezone').click({\n  force: true\n});\ncy.get('[data-value=\"UTC/GMT +2\"]').click(); //selecting currency \ncy.get('#companyCurrency').click({\n  force: true\n});\ncy.get('#menu-companyCurrency > .MuiPaper-root > .MuiList-root > [tabindex=\"-1\"]').click({\n  force: true\n}); // selected dollar\n//selecting crop\ncy.get(':nth-child(5) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow').click({\n  force: true\n}); //  cy.contains('Rice').click({force:true}) // since currency dropdown uses a shadow DOM, we can directly select / chose the item directly\n//selecting season\ncy.get('#companySeason').click({\n  force: true\n});\ncy.contains('Wet').click({\n  force: true\n});\ncy.get(':nth-child(7) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow').click({\n  force: true\n});\ncy.contains('GLO').click({\n  force: true\n}); //set threshold\ncy.get('#clearanceThreshold').type('21', {\n  force: true\n}); //Number of members per statement review personnel\ncy.get('#clearanceThreshold').type('78', {\n  force: true\n}); //Number of Members per TFM Sign-up Personnel\ncy.get('#capacityPerSignupPersonnel').type('32', {\n  force: true\n}); //Number of Members per Crowd Control Personnel\ncy.get('#capacityPerCrowdControlPersonnel').type('42', {\n  force: true\n}); //date picker\ncy.get(':nth-child(9) > .react-date-picker__wrapper > .react-date-picker__inputGroup > .react-date-picker__inputGroup__month').type('12', {\n  force: true\n});\ncy.get(':nth-child(9) > .react-date-picker__wrapper > .react-date-picker__inputGroup > .react-date-picker__inputGroup__day').type('18', {\n  force: true\n});\ncy.get(':nth-child(9) > .react-date-picker__wrapper > .react-date-picker__inputGroup > .react-date-picker__inputGroup__year').type('2023', {\n  force: true\n});",
+              "err": {},
+              "uuid": "6225b822-b4c8-40ab-8e45-30fc031cb18d",
+              "parentUUID": "c42d101f-0a7b-4a25-8104-5bb3c7081faa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6225b822-b4c8-40ab-8e45-30fc031cb18d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "baseUrl": "http://planning.uat.agric-os.com/",
+    "watchForFileChanges": false,
+    "testFiles": "**/*.js",
+    "reporter":"mochawesome",
+    "reporterOptions": {
+        "charts":true,
+        "overwrite":false,
+        "html":false,
+        "json":true,
+        "reportDir":"cypress/reports" 
+    }
+}
