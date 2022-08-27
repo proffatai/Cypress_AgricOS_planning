@@ -1,7 +1,7 @@
 {
     "baseUrl": "http://planning.uat.agric-os.com/",
     "watchForFileChanges": false,
-    "testFiles": "**/*.js",
+    "testFiles": "**/*.feature",
     "reporter":"mochawesome",
     "reporterOptions": {
         "charts":true,
