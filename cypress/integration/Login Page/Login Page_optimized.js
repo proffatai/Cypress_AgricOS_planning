@@ -1,4 +1,4 @@
-// Optimizing the code for login page.js
+// Optimizing the code for login page_old.js
 
 import {Given, When, And, Then} from 'cypress-cucumber-preprocessor/steps'
 /// <reference types ="cypress">
