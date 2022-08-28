@@ -29,4 +29,4 @@ Feature: Login page
         When User enters correct username
         And  User enters incorrect password
         And User clicks the login button
-        Then User should not be taken to the dashboard
+        Then User should not be taken to the dashboard due to password
