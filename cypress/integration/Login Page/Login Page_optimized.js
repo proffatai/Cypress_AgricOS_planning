@@ -1,20 +1,24 @@
 // Optimizing the code for login page_old.js
 
-import {Given, When, And, Then} from 'cypress-cucumber-preprocessor/steps'
+import {Given, When, And, Then, Before} from 'cypress-cucumber-preprocessor/steps'
 /// <reference types ="cypress">
 
 let credentials;
 let url ='http://planning.uat.agric-os.com/'
 
+//for cucumber framework, we use the Before() hook and not the beforeEach or before
+Before(()=>{
+ 
+        // importing the stored username and password     
+        cy.fixture('Login_credentials').then( (data) =>{
+            credentials=data
+               })
+})
+
 // Successful Login
 Given('User is on the homepage of the planning module',()=>{
         cy.visit('/')
         cy.url().should('equal',url)
-
-        // importing the stored username and password     
-    cy.fixture('Login_credentials').then( (data) =>{
-         credentials=data
-            })
     })
 
 When('User enters correct username',()=>{
