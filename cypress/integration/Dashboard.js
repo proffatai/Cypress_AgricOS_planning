@@ -42,7 +42,7 @@ describe('Homescreen of planning OS', () => {
       cy.contains('Logout').click({force:true})
      
       //Affirming that the appp has signed out successfully by checking the url of the new page
-      let url ='http://planning.uat.agric-os.com/'
+      let url ='http://planning-portal.agric-os.com/'
       cy.url().should('equal', url) // alternative cy.url().should('eq',url)
 
   })

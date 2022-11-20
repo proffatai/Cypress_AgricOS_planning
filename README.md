@@ -56,3 +56,18 @@ for the posttest, it is what should run after 'test' has ran. Here we used: `"po
 
 
   to run this project, use: `npm run test`.
+
+  ### Running on jenkins
+
+We  just configure our custom command inside the package.json file under the scripts section.
+
+say  we have the following:
+"myCode" :"npx cypress run --config pageLoadTimeout=100000"
+
+reate a job
+Under SCM, select git and provide the url to the project and the credentials and specify the branch
+Proceed to Build step section, select Execute shell and run the custom command you would actually run on terminal `npm run myCode`
+
+Save the project and build the job. Proceed to view the output on console
+
+NB: `--config pageLoadTimeout` was added to invrease the page timeout
