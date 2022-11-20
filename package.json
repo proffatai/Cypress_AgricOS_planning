@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --config pageLoadTimeout=100000"
+    "myCode": "npx cypress run --config pageLoadTimeout=100000"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
