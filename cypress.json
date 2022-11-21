@@ -1,5 +1,6 @@
 {
-    "baseUrl": "http://planning.uat.agric-os.com/",
+    "baseUrl": "http://planning-portal.agric-os.com/",
+    "pageLoadTimeout":100000,
     "watchForFileChanges": false,
     "testFiles": "**/*.js",
     "reporter":"mochawesome",

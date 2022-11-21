@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-21T19:11:41.436Z",
+    "end": "2022-11-21T19:12:48.769Z",
+    "duration": 67333,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3077e786-d9ac-43d1-a224-3b7087c8e86f",
+      "title": "",
+      "fullFile": "cypress/integration/Dashboard.js",
+      "file": "cypress/integration/Dashboard.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "313182d4-1377-4ef3-9e1b-06f68c812e81",
+          "title": "Homescreen of planning OS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dashboard Menu",
+              "fullTitle": "Homescreen of planning OS Dashboard Menu",
+              "timedOut": null,
+              "duration": 67131,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var menus = [\"Dashboard\", \"General Settings\", \"Management\", \"Member Settings\", \"Lock Input\", \"Goal Settings\", \"Farm Input\", \"Credit Sustainability\", \"Location planning\", \"Personnel planning\", \"Logistics\", \"Assets\", \"App Support\"];\ncy.visit('/');\ncy.get('#username').type('Excel01');\ncy.get('#password').type('1234');\ncy.get('.MuiButton-root').click();\ncy.get('.MuiToolbar-root > .MuiTypography-root').should('contain', 'Dashboard').and('be.visible'); // verifying that the first page is the dashboard\n//Checking if all the menus are present\nvar i = 0;\nwhile (i < menus.length) {\n  cy.get('.MuiList-padding').should('contain', menus[i]).and('be.visible');\n  i++;\n} //verifying that the hub id is present\n\ncy.get('.css-6tke00-MuiTypography-root').should('have.text', 'Hub: Lagos'); //verifying that the Overall Status is present\ncy.get('.css-0 > .MuiTypography-root').should('contain', 'Overall Status'); //checking out for the logout button\ncy.contains('Logout').should('be.enabled').and('be.visible'); //Logging out of the app\ncy.contains('Logout').click({\n  force: true\n}); //Affirming that the appp has signed out successfully by checking the url of the new page\nvar url = 'http://planning-portal.agric-os.com/';\ncy.url().should('equal', url); // alternative cy.url().should('eq',url)",
+              "err": {},
+              "uuid": "d979bd59-5c4c-45ea-a2c5-b9ae5ea0932c",
+              "parentUUID": "313182d4-1377-4ef3-9e1b-06f68c812e81",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d979bd59-5c4c-45ea-a2c5-b9ae5ea0932c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 67131,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

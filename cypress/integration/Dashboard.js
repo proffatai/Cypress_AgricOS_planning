@@ -17,9 +17,7 @@ describe('Homescreen of planning OS', () => {
       "App Support"
     ]
     cy.visit('/')
-    cy.get('#username').type('lagos.admin')
-    cy.get('#password').type('1234')
-    cy.get('.MuiButton-root').click()
+    cy.login('Excel01', 1234)
     cy.get('.MuiToolbar-root > .MuiTypography-root')
       .should('contain','Dashboard').and('be.visible') // verifying that the first page is the dashboard
    

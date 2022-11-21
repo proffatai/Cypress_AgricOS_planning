@@ -1,13 +1,11 @@
 describe('Homescreen of planning OS', () => {
     it('General Settings Menu', () => {
   
-      cy.visit('http://planning.uat.agric-os.com/')
-      cy.get('#username').type('lagos.admin')
-      cy.get('#password').type('1234')
-      cy.get('.MuiButton-root').click()
+      cy.visit('/')
+      cy.login('Excel01', 1234)
       cy.contains('General Settings').click()
       //Affirming that we are on general settings page
-    let url ='http://planning.uat.agric-os.com/general-settings'
+    let url ='http://planning-portal.agric-os.com/general-settings'
     cy.url().should('equal', url) 
      
     //Headings that should be present in the app
