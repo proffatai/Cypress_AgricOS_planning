@@ -3,7 +3,7 @@ describe('Homescreen of planning OS', () => {
   
       cy.visit('/')
       cy.login('Excel01', 1234)
-      cy.contains('General Settings').click()
+      cy.contains('General Settings').click({force:true})
       //Affirming that we are on general settings page
     let url ='http://planning-portal.agric-os.com/general-settings'
     cy.url().should('equal', url) 
@@ -28,32 +28,32 @@ describe('Homescreen of planning OS', () => {
     }
      //selecting country
   cy.get('#companyCountry').click()
-  cy.get('.MuiMenuItem-root').should('contain', 'Nigeria')
+  cy.get('.MuiPaper-root > .MuiList-root > [tabindex="0"]',{ timeout: 10000 }).should('contain', 'Nigeria')
      
  //selecting language
  cy.get('#companyLanguage').click({force:true})
- cy.get('[data-value="FRENCH"]').should('contain', 'FRENCH')
+ cy.get('[data-value="FRENCH"]',{ timeout: 10000 }).should('contain', 'FRENCH')
  cy.get('[data-value="ENGLISH"]').should('contain', 'ENGLISH')
  cy.get('[data-value="HAUSA"]').should('contain', 'HAUSA')
    
  //selecting timezone (GNT+2)
  cy.get('#companyTimezone').click({force:true})
- cy.get('[data-value="UTC/GMT +2"]').click()
+ cy.get('[data-value="UTC/GMT +2"]',{ timeout: 10000 }).click()
 
  //selecting currency 
  cy.get('#companyCurrency').click({force:true})
- cy.get('#menu-companyCurrency > .MuiPaper-root > .MuiList-root > [tabindex="-1"]').click({force:true}) // selected dollar
+ cy.contains('Dollars',{ timeout: 10000 }).click({force:true}) // selected dollar
 
  //selecting crop
- cy.get(':nth-child(5) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow').click({force:true})
+ cy.get(':nth-child(5) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow',{ timeout: 10000 }).click({force:true})
 //  cy.contains('Rice').click({force:true}) // since currency dropdown uses a shadow DOM, we can directly select / chose the item directly
 
 //selecting season
 cy.get('#companySeason').click({force:true})
-cy.contains('Wet').click({force:true})
+cy.contains('Wet',{ timeout: 10000 }).click({force:true})
 
-cy.get(':nth-child(7) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow').click({force:true})
-cy.contains('GLO').click({force:true})
+// cy.get(':nth-child(7) > .rmsc > .dropdown-container > .dropdown-heading > .dropdown-heading-dropdown-arrow').click({force:true})
+// cy.contains('GLO',{ timeout: 10000 }).check({force:true})
 
 //set threshold
 cy.get('#clearanceThreshold').type('21',{force:true} )

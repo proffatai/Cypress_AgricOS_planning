@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-22T04:28:47.786Z",
+    "end": "2022-11-22T04:29:17.262Z",
+    "duration": 29476,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a7269505-9f63-483a-b3f2-d26899768d02",
+      "title": "",
+      "fullFile": "cypress/integration/Login Page.js",
+      "file": "cypress/integration/Login Page.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "76e49d4e-7d9e-43f0-85a0-130b622e939d",
+          "title": "Planning Login Screen",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valid username and valid password",
+              "fullTitle": "Planning Login Screen Valid username and valid password",
+              "timedOut": null,
+              "duration": 9800,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#username').type(credentials.username);\ncy.get('#password').type(credentials.password);\ncy.get('.MuiButton-root').click();\ncy.get('.MuiToolbar-root > .MuiTypography-root').should('contain', 'Dashboard').and('be.visible'); // verifying that the first page is the dashboard",
+              "err": {},
+              "uuid": "3b242aaa-de76-472b-9e54-af2a35ebccf0",
+              "parentUUID": "76e49d4e-7d9e-43f0-85a0-130b622e939d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Invalid username and invalid password",
+              "fullTitle": "Planning Login Screen Invalid username and invalid password",
+              "timedOut": null,
+              "duration": 3177,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#username').type(credentials.inUsername);\ncy.get('#password').type(credentials.inPassword);\ncy.get('.MuiButton-root').click();\ncy.get('[style=\"color: red; text-align: center;\"]').should('have.text', 'User ' + credentials.inUsername + ' not found');",
+              "err": {},
+              "uuid": "e36a498a-d9e8-4784-9b9a-54887e8ff7f9",
+              "parentUUID": "76e49d4e-7d9e-43f0-85a0-130b622e939d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Invalid username and valid password",
+              "fullTitle": "Planning Login Screen Invalid username and valid password",
+              "timedOut": null,
+              "duration": 3052,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#username').type(credentials.inUsername);\ncy.get('#password').type(credentials.password);\ncy.get('.MuiButton-root').click();\ncy.get('[style=\"color: red; text-align: center;\"]').should('have.text', 'User ' + credentials.inUsername + ' not found');",
+              "err": {},
+              "uuid": "408421ea-18b2-415c-aced-1d756c3fa31a",
+              "parentUUID": "76e49d4e-7d9e-43f0-85a0-130b622e939d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Valid username and invalid password",
+              "fullTitle": "Planning Login Screen Valid username and invalid password",
+              "timedOut": null,
+              "duration": 13334,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#username').type(credentials.username);\ncy.get('#password').type(credentials.inPassword);\ncy.get('.MuiButton-root').click();\ncy.get('[style=\"color: red; text-align: center;\"]').should('have.text', 'Your password not matching');",
+              "err": {},
+              "uuid": "b055732c-0b9d-44ea-8cac-6cd6a7a4596e",
+              "parentUUID": "76e49d4e-7d9e-43f0-85a0-130b622e939d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b242aaa-de76-472b-9e54-af2a35ebccf0",
+            "e36a498a-d9e8-4784-9b9a-54887e8ff7f9",
+            "408421ea-18b2-415c-aced-1d756c3fa31a",
+            "b055732c-0b9d-44ea-8cac-6cd6a7a4596e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29363,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
