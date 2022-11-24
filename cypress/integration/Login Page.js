@@ -34,4 +34,13 @@ describe('Planning Login Screen', ()=>{
         cy.login(credentials.username, credentials.inPassword)
         cy.get('[style="color: red; text-align: center;"]').should('have.text','Your password not matching')
     })
+
+    it('Verifying BG logo is present', ()=>{
+        cy.get('img').should('be.visible').and('have.attr','src')
+        cy.get('img').should('have.attr','alt')
+    })
+
+    it('Verifying background image is present', ()=>{
+    cy.get('.MuiBox-root > .MuiTypography-root').should('be.visible').and('have.text', 'Agric OS Planning Module')
+    })
 })
