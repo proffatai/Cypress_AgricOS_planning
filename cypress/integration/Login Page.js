@@ -4,9 +4,7 @@ describe('Planning Login Screen', ()=>{
     // importing the stored username and password
     beforeEach(()=>{
         cy.visit('/')
-        cy.fixture('Login_credentials').then( (data) =>{
-            credentials=data
-    })
+        cy.fixture('Login_credentials').then( (data) =>{credentials=data})
     })
 
 
