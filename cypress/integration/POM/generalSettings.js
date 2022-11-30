@@ -1,4 +1,4 @@
-describe('Homescreen of planning OS', () => {
+describe('Planning OS', () => {
     it('General Settings Menu', () => {
   
       cy.visit('/')

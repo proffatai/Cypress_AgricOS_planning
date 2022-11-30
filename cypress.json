@@ -1,5 +1,6 @@
 {
     "baseUrl": "http://planning-portal.agric-os.com/",
+    "chromeWebSecurity":false,
     "pageLoadTimeout":300000,
     "watchForFileChanges": false,
     "testFiles": "**/*.js",
